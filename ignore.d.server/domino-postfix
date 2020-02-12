@@ -45,3 +45,33 @@
 # Nov 16 05:31:27 debian-linode postfix/smtpd[2253]: warning: hostname 30.223.46.89.baremetal.zare.com does not resolve to address 89.46.223.30: No address associated with hostname
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix(\/submission|\/smtps|\/[0-9]+)?\/smtpd\[[[:digit:]]+\]: warning: hostname [[:alnum:].]+ does not resolve to address [.[:digit:]]+: No address associated with hostname$
+
+
+# Jan 01 00:00:00 debian postfix/smtp[11111]: 172733EFE6: Cannot start TLS: handshake failure
+# Jan 01 00:00:00 debian postfix/smtp[11111]: B8B6B3E588: Cannot start TLS: handshake failure
+# Jan 01 00:00:00 debian postfix/smtp[11111]: D5FD93E557: Cannot start TLS: handshake failure
+
+\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: [[:alnum:]]+: Cannot start TLS: handshake failure$
+
+
+# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to eu-smtp-inbound-2.mimecast.com[195.130.217.201]:25: -1
+# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to mail.po-mysl.pl[185.204.218.208]:25: -1
+# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to mail.po-mysl.pl[185.204.218.208]:25: -1
+# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to mail.po-mysl.pl[185.204.218.208]:25: -1
+# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to mail.po-mysl.pl[185.204.218.208]:25: -1
+
+\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: SSL_connect error to [\.[:alnum:]-]+\[[.0-9]+\]:[0-9]+: [[:digit:]-]+$
+
+
+# Jan 01 00:00:00 debian postfix/smtp[11111]: warning: TLS library problem: error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../ssl/record/ssl3_record.c:332:
+# Jan 01 00:00:00 debian postfix/smtp[11111]: warning: TLS library problem: error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../ssl/record/ssl3_record.c:332:
+# Jan 01 00:00:00 debian postfix/smtp[11111]: warning: TLS library problem: error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../ssl/record/ssl3_record.c:332:
+# Jan 01 00:00:00 debian postfix/smtp[11111]: warning: TLS library problem: error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../ssl/record/ssl3_record.c:332:
+
+\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: warning: TLS library problem: error:[[:alnum:]]+:SSL routines:ssl3_get_record:wrong version number:..\/ssl\/record\/ssl3_record.c:[0-9]+:$
+
+
+# Jan 01 00:00:00 debian postfix/smtpd[11111]: Anonymous TLS connection established from z13.domain.com[1.2.3.4]: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256
+# Jan 01 00:00:00 debian postfix/smtpd[11111]: Anonymous TLS connection established from z15.domain.com[1.2.3.4]: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256
+
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtpd\[[0-9]+\]: Anonymous TLS connection established from [.[:alnum:]]+\[[.0-9]+\]: TLSv[.0-9]+ with cipher [_[:alnum:]]+ \([\/0-9]+ bits\) key-exchange ECDHE \([[:alnum:]-]+\) server-signature [[:alnum:]-]+ \([0-9]+ bits\) server-digest [[:alnum:]]+$

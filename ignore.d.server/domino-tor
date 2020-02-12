@@ -1,4 +1,4 @@
-# ; -*- mode: text; fill-column: 99999 -*-
+# ; -*- mode: conf; fill-column: 99999 -*-
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Your network connection speed appears to have changed. Resetting timeout to [[:digit:]]+s after [[:digit:]]+ timeouts and [[:digit:]]+ buildtimes.$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: We now have enough directory information to build circuits.$
@@ -11,11 +11,16 @@
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Heartbeat: Tor's uptime is( [0-9]+ days)? [[:digit:]:]+ hours, with [0-9]+ circuits open. I've sent [.[:digit:]]+ [[:alnum:]]{1,2} and received [.[:digit:]]+ [[:alnum:]]{1,2}.$
 
-# Nov  7 00:01:05 linode2 Tor[14367]: Read configuration file "/usr/share/tor/tor-service-defaults-torrc".
-# Nov  7 00:01:05 linode2 Tor[14367]: Read configuration file "/etc/tor/torrc".
+# Nov  7 00:01:05 debian Tor[14367]: Read configuration file "/usr/share/tor/tor-service-defaults-torrc".
+# Nov  7 00:01:05 debian Tor[14367]: Read configuration file "/etc/tor/torrc".
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Read configuration file "[[:alnum:]\/-]+".$
 
-# Nov  7 00:01:05 linode2 Tor[14367]: Received reload signal (hup). Reloading config and resetting internal state.
+# Nov  7 00:01:05 debian Tor[14367]: Received reload signal (hup). Reloading config and resetting internal state.
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Received reload signal \(hup\)\. Reloading config and resetting internal state\.$
+
+
+# Jan 01 00:00:00 debian Tor[14367]: Requested exit point '$39C1B28407EAC759801AFCB7106D5DC05B42A8C9' is not known. Closing.
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Requested exit point \'[[:alnum:]$]+\' is not known. Closing.$

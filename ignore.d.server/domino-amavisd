@@ -1,4 +1,4 @@
-# ; -*- mode: text; fill-column: 99999 -*-
+# ; -*- mode: conf; fill-column: 99999 -*-
 
 # Sat Aug  4 17:58:14 CST 2018
 
@@ -7,3 +7,10 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ amavis\[[[:digit:]]+\]: \([-[:digit:]]+\) Passed (CLEAN|SPAM|SPAMMY|INFECTED \([-._[:alnum:][:space:]]+\)|BAD-HEADER(-[[:digit:]])?)( \{((Relayed(OpenRelay|Inbound|Outbound)|Quarantined),?)+\})?,( LOCAL)?( \[(IPv6:)?[[:xdigit:].:]{3,39}\](:[[:digit:]]+)?){0,2} <[^>]*> -> <[^>]*>(,<[^>]*>)*,( quarantine: [[:alnum:]]/(spam|virus|badh)-[-+_[:alnum:]]+(\.gz)?,)?( Queue-ID: [[:xdigit:]]{10,11},)?( Message-ID: <[^>]+>( \((added by[^)]+|sfid-[_[:xdigit:]]+)\))?,)?( Resent-Message-ID: <[^>]+>,)? mail_id: [-+_[:alnum:]]+, Hits: (-?[.[:digit:]]*)+, size: [[:xdigit:]]+, queued_as: [[:xdigit:]/]+(, dkim_id=[-=_+\.,@[:alnum:]]+)?(, dkim_sd=[^[:space:]]+)?( OK id=[-[:alnum:]]+)?, [[:digit:]]+ ms$
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ amavis\[[[:digit:]]+\]: \([-[:digit:]]+\) Blocked (SPAM|BANNED \([-.,_[:alnum:][:space:]\\]+\))( {((NoBounceInbound|BouncedOpenRelay|DiscardedInbound|Quarantined|NoBounceOpenRelay),?)+})?,(( \[(IPv6:)?[[:xdigit:].:]{3,39}\](:[[:digit:]]+)?){1,2})? <[^>]*> -> (<[^>]*>,?)+,( quarantine: [[:alnum:]]/(banned|spam)-[-+_[:alnum:]]+(\.gz)?,)?( Queue-ID: [[:xdigit:]]{10},)?( Message-ID: <[^>]+>,)?( \((added by[^)]+|sfid-[_[:xdigit:]]+)\),)?( Resent-Message-ID: <[^>]+>,)?( mail_id: [-+_[:alnum:]]+,)? Hits: (-?[.[:digit:]]*)+, size: [[:xdigit:]]+(, dkim_id=[-=_+\.,@[:alnum:]]+)?(, dkim_sd=[^[:space:]]+)?( OK id=[-[:alnum:]]+)?, [[:digit:]]+ ms$
+
+
+# Jan 01 00:00:00 debian amavis[23028]: (23028-15) Passed SPAM {RelayedTaggedInbound,Quarantined}, [1.2.3.4] [1.2.3.4] <user@domain.com> -> <user@domain.com>, quarantine: 2/spam-21caAMxOOX1T.gz, mail_id: 21caAMxOOX1T, Hits: 22.109, size: 2257, queued_as: 9F5CB40970, 1782 ms
+# Jan 01 00:00:00 debian amavis[13944]: (13944-18) Passed SPAM {RelayedTaggedInbound,Quarantined}, [1.2.3.4] [1.2.3.4] <user@domain.com> -> <user@domain.com>, quarantine: t/spam-texYR1HFOQJL.gz, Message-ID: <2079978790.654136.1579145280906.JavaMail.user@domain.com>, mail_id: texYR1HFOQJL, Hits: 6.627, size: 4410, queued_as: 0993B400C9, 796 ms
+# Jan 01 00:00:00 debian amavis[11111]: (07635-18) Passed SPAM {RelayedTaggedInbound,Quarantined}, [1.2.3.4] [1.2.3.4] <dstartup004@gmail.com> -> <user@domain.com>, quarantine: w/spam-wHNx4wR-oxs3.gz, Message-ID: <20200120002624.B93004436@mail0.ceniai.inf.cu>, mail_id: wHNx4wR-oxs3, Hits: 8.798, size: 2295, queued_as: AF9314084B, 4047 ms
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ amavis\[[[:digit:]]+\]: \([0-9-]+\) Passed SPAM {RelayedTaggedInbound,Quarantined}, \[[0-9.]+\] \[[0-9.]+\] <[@[:alnum:].]+> -> <[@[:alnum:].]+>, quarantine: [[:alnum:]\/.-]+,( Message-ID: <[[:alnum:]@.]+>,)? mail_id: [[:alnum:]-]+, Hits: [0-9.]+, size: [0-9]+, queued_as: [[:alnum:]]+, [0-9]+ ms$
