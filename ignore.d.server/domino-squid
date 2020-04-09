@@ -1,0 +1,10 @@
+# ; -*- mode: conf; fill-column: 99999 -*-
+
+#Apr  9 10:45:52 debian squid[30555]: Logfile: opening log stdio:/var/spool/squid/netdb.state
+#Apr  9 10:45:52 debian squid[30555]: Logfile: closing log stdio:/var/spool/squid/netdb.state
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Logfile: (opening|closing) log stdio:\/var\/spool\/squid\/netdb.state$
+
+#Apr  9 10:45:52 debian squid[30555]: NETDB state saved; 0 entries, 0 msec
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: NETDB state saved; [0-9.]+ entries, [0-9.]+ msec$
