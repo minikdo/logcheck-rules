@@ -2,14 +2,10 @@
 
 HOSTS=(
     linode2
-    linode2-
     linode
-    linode-
     adm
     waw
     edyta
-    m81
-    m81-
 )
 
 for host in ${HOSTS[*]}; do

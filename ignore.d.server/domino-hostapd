@@ -1,4 +1,4 @@
-# ; -*- mode: text; fill-column: 99999 -*-
+# ; -*- mode: conf; fill-column: 99999 -*-
 
 # Nov  2 00:00:00 debian hostapd: wls12: STA 0a:0a:0a:0a:0a:0a IEEE 802.1X: Supplicant used different EAP type: 3 (unknown)
 
@@ -43,3 +43,6 @@
 
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ hostapd(\[[0-9]+\])?:\s+frame too short for this IEEE 802\.1(1|X) packet$
 
+# Jan  1 00:00:00 debian hostapd[687]: wls4: AP-STA-POLL-OK 3c:71:bf:2d:10:52
+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ hostapd(\[[0-9]+\])?: [[:alnum:]]+: AP-STA-POLL-OK [[:xdigit:]:]{17}$
