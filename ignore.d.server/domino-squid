@@ -8,3 +8,75 @@
 #Apr  9 10:45:52 debian squid[30555]: NETDB state saved; 0 entries, 0 msec
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: NETDB state saved; [0-9.]+ entries, [0-9.]+ msec$
+
+
+# Jan  1 00:00:00 debian squid[12451]: Squid Parent: (squid-1) process 14076 started
+# Jan  1 00:00:00 debian squid[12451]: Squid Parent: squid-1 process 23082 exited due to signal 6 with status 0
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Squid Parent: \(?squid-1\)? process [0-9]+ (started|exited due to signal [0-9]+ with status [0-9]+)$
+
+# Jan  1 00:00:00 debian squid[14076]: Accepting HTTP Socket connections at local=[::]:3128 remote=[::] FD 12 flags=9
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Accepting HTTP Socket connections at local=\[::\]:[0-9]+ remote=\[::\] FD [0-9]+ flags=[0-9]+$
+
+# Jan  1 00:00:00 debian squid[14076]: Adaptation support is off.
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Adaptation support is off.$
+
+# Jan  1 00:00:00 debian squid[14076]: DNS Socket created at 1.2.3.4, FD 9
+# Jan  1 00:00:00 debian squid[14076]: DNS Socket created at [::], FD 5
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: DNS Socket created at [0-9.\[\]:]+, FD [0-9]+$
+
+# Jan  1 00:00:00 debian squid[14076]: Finished loading MIME types and icons.
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Finished loading MIME types and icons.$
+
+# Jan  1 00:00:00 debian squid[14076]: Initializing IP Cache...
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Initializing IP Cache...$
+
+# Jan  1 00:00:00 debian squid[14076]: Logfile Daemon: opening log /var/log/squid/access.log
+# Jan  1 00:00:00 debian squid[14076]: Logfile: opening log daemon:/var/log/squid/access.log
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Logfile( Daemon)?: opening log (daemon:)?\/var\/log\/squid\/access.log$
+
+# Jan  1 00:00:00 debian squid[14076]: Pinger socket opened on FD 14
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Pinger socket opened on FD [0-9]+$
+
+# Jan  1 00:00:00 debian squid[14076]: Process Roles: worker
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Process Roles: worker$
+
+# Jan  1 00:00:00 debian squid[14076]: Service Name: squid
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Service Name: squid$
+
+# Jan  1 00:00:00 debian squid[14076]: Squid plugin modules loaded: 0
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Squid plugin modules loaded: [0-9]+$
+
+# Jan  1 00:00:00 debian squid[14076]: Starting Squid Cache version 4.6 for x86_64-pc-linux-gnu...
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Starting Squid Cache version [0-9.]+ for x86_64-pc-linux-gnu\.\.\.$
+
+# Jan  1 00:00:00 debian squid[14076]: Store logging disabled
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Store logging disabled$
+
+# Jan  1 00:00:00 debian squid[14076]: Swap maxSize 0 + 262144 KB, estimated 20164 objects
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Swap maxSize [0-9]+ \+ [0-9]+ KB, estimated [0-9]+ objects$
+
+# Jan  1 00:00:00 debian squid[23082]: Closing Pinger socket on FD 14
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: Closing Pinger socket on FD [0-9]+$
+
+# Jan  1 00:00:00 debian squid[23082]: assertion failed: comm.cc:428: "!isOpen(conn->fd)"
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: assertion failed: [[:alnum:].:]+ \"\!isOpen\([[:alnum:]>-]+\)\"$
+
+# Jan  1 00:00:00 debian squid[23082]: logfileRotate: daemon:/var/log/squid/access.log
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: logfileRotate: daemon:\/var\/log\/squid\/[[:alnum:]]+.log$
