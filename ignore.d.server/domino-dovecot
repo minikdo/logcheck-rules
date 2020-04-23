@@ -5,8 +5,6 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: auth: Warning: Event [[:alnum:]]+ leaked \(parent=\(nil\)\): auth-client-connection.c:[0-9]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: auth: plain\(\?,[.[:digit:]]+\): Request timed out waiting for client to continue authentication \([[:digit:]]+ secs\)$
 
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap-login: Disconnected \((no auth attempts in [0-9]+ secs|disconnected before auth was ready, waited [0-9]+ secs)\):( user=<>,)? rip=[.[:digit:]]+, lip=[.[:digit:]]+, TLS:? (handshaking: (read\(size=[0-9]+\) failed: Connection reset by peer|Connection closed)|SSL_read failed: error:[[:alnum:]]+:SSL\sroutines:ssl3_read_bytes:unexpected record), session=<[[:alnum:]\+\/]+>$
-
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap: Connection closed in=[[:digit:]]+ out=[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]]+>)?: Connection closed \((UID FETCH|UID STORE|LIST|NOOP|STATUS|append)? finished [0-9.]+ secs ago\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+( trashed=[0-9]+)?( hdr_count=[0-9]+)?( hdr_bytes=[0-9]+)?( body_count=[0-9]+)?( body_bytes=[0-9]+)?$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]]+>)?: Disconnected for inactivity in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
@@ -14,44 +12,30 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([\._@[:alnum:]-]+\)<[[:digit:]]+><[\+\/[:alnum:]]+>: Logged out in=[[:digit:]]+ out=[[:digit:]]+ deleted=[[:digit:]]+ expunged=[[:digit:]]+ trashed=[[:digit:]]+ hdr_count=[[:digit:]]+ hdr_bytes=[[:digit:]]+ body_count=[[:digit:]]+ body_bytes=[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]]+>)?: Connection closed(: read\(size=[0-9]+\))?( failed: Connection reset by peer)? \(IDLE running for [0-9.]+ \+ waiting input for [0-9.]+ secs, [0-9]+ B in \+ [0-9\+]+ B out, state=wait-input\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+( trashed=[0-9]+)?( hdr_count=[0-9]+)?( hdr_bytes=[0-9]+)?( body_count=[0-9]+)?( body_bytes=[0-9]+)?$
 
+# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<16443><i7h23j6c8KBPvAGh>: Connection closed (noop finished 0.081 secs ago) in=1207 out=74860 deleted=0 expunged=0 trashed=0 hdr_count=1 hdr_bytes=310 body_count=0 body_bytes=0
+# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<18518><V3/zyZWcSoJTBJQq>: Connection closed (IDLE finished 137.627 secs ago) in=1074 out=5163 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<20806><pfn8vJac0MxTBJQq>: Connection closed (UID SEARCH finished 2.242 secs ago) in=54 out=1167 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<13658><NnDnez2clJRPvAGh>: Connection closed (UID fetch finished 0.145 secs ago) in=9581 out=9495290 deleted=0 expunged=0 trashed=0 hdr_count=4 hdr_bytes=1467 body_count=144 body_bytes=9365757
+# Apr 21 22:22:01 debian dovecot: imap(user@domain.com)<37293><E9uAwNKj3tZTHSoc>: Connection closed (No commands sent) in=0 out=374 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([.@[:alnum:]]+\)<[0-9]+><[\/+[:alnum:]]+>: Connection closed \(((noop|IDLE|UID (SEARCH|fetch)) finished [.0-9]+ secs ago|No commands sent)\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
+
 # Jan  1 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 0 secs): user=<>, rip=1.2.3.4, lip=1.2.3.4, TLS handshaking: SSL connection closed during handshake, session=<FA84PESjC+hZKElg>
 # Jan  1 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 5 secs): user=<>, rip=1.2.3.4, lip=1.2.3.4, TLS handshaking: SSL connection closed during handshake, session=<as/c4UyjV/ZZKEnQ>
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap-login: Disconnected \(no auth attempts in [0-9]+ secs\): user=<[[:alnum:]@_.-]*>, rip=[.:[:alnum:]]+, lip=[.:[:alnum:]]+, TLS handshaking: SSL connection closed during handshake, session=<[[:alnum:]\+\/]+>$
 
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap-login: Disconnected \((no auth attempts in [0-9]+ secs|disconnected before auth was ready, waited [0-9]+ secs)\):( user=<>,)? rip=[.[:digit:]]+, lip=[.[:digit:]]+, TLS:? (handshaking: (read\(size=[0-9]+\) failed: Connection reset by peer|Connection closed)|SSL_read failed: error:[[:alnum:]]+:SSL\sroutines:ssl3_read_bytes:unexpected record), session=<[[:alnum:]\+\/]+>$
+
 # Jan  1 00:00:00 debian dovecot: imap-login: Disconnected (auth failed, 1 attempts in 6 secs): user=<user@domain.com>, method=PLAIN, rip=1.2.3.4, lip=1.2.3.4, TLS: Connection closed, session=<EbVGd0WjTa+3WdNe>
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap-login: Disconnected \(auth failed, [0-9]+ attempts in [0-9]+ secs\): user=<[[:alnum:]@_.-]+>, method=PLAIN, rip=[.:[:alnum:]]+, lip=[.:[:alnum:]]+, TLS: Connection closed, session=<[[:alnum:]\+\/]+>$
 
-# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<16443><i7h23j6c8KBPvAGh>: Connection closed (noop finished 0.081 secs ago) in=1207 out=74860 deleted=0 expunged=0 trashed=0 hdr_count=1 hdr_bytes=310 body_count=0 body_bytes=0
-# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<18518><V3/zyZWcSoJTBJQq>: Connection closed (IDLE finished 137.627 secs ago) in=1074 out=5163 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
-# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<20806><pfn8vJac0MxTBJQq>: Connection closed (UID SEARCH finished 2.242 secs ago) in=54 out=1167 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
-# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<13658><NnDnez2clJRPvAGh>: Connection closed (UID fetch finished 0.145 secs ago) in=9581 out=9495290 deleted=0 expunged=0 trashed=0 hdr_count=4 hdr_bytes=1467 body_count=144 body_bytes=9365757
-
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([.@[:alnum:]]+\)<[0-9]+><[\/+[:alnum:]]+>: Connection closed \((noop|IDLE|UID (SEARCH|fetch)) finished [.0-9]+ secs ago\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
-
-
 # Jan 01 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 1 secs): user=<>, rip=1.2.3.4, lip=1.2.3.4, TLS: Connection closed, session=<sTF0vUKc1rvRYbSh>
 # Jan 01 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 1 secs): user=<>, rip=2600:3c03::f03c:92ff:fe37:de06, lip=2a01:7e01::f03c:91ff:fe92:641e, TLS handshaking: Connection closed, session=<JTrRTkOcvuAmADwDAAAAAPA8kv/+N94G>
 # Jan 01 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 1 secs): user=<>, rip=2600:3c03::f03c:92ff:fe37:de06, lip=2a01:7e01::f03c:91ff:fe92:641e, TLS handshaking: Connection closed, session=<wBWyTkOcWtomADwDAAAAAPA8kv/+N94G>
-# Jan 01 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 2 secs): user=<>, rip=1.2.3.4, lip=1.2.3.4, TLS: Connection closed, session=<tJhbvUKcMrjRYbSh>
 # Jan 01 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 2 secs): user=<>, rip=1.2.3.4, lip=1.2.3.4, TLS: Connection closed, session=<vueMvUKcMr/RYbSh>
-# Jan 01 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 2 secs): user=<>, rip=2600:3c03::f03c:92ff:fe37:de06, lip=2a01:7e01::f03c:91ff:fe92:641e, TLS: Connection closed, session=<PQ8LT0OcIuwmADwDAAAAAPA8kv/+N94G>
 # Jan 01 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 2 secs): user=<>, rip=2600:3c03::f03c:92ff:fe37:de06, lip=2a01:7e01::f03c:91ff:fe92:641e, TLS: Connection closed, session=<U5ftTkOcZOYmADwDAAAAAPA8kv/+N94G>
 # Jan 01 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 5 secs): user=<>, rip=1.2.3.4, lip=1.2.3.4, TLS: read(size=583) failed: Connection reset by peer, session=<wSrda9KcRpdC8Ox3>
 
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap-login: Disconnected \(no auth attempts in [0-9]+ secs\): user=<>, rip=[.:[:alnum:]]+, lip=[.:[:alnum:]]+, TLS( handshaking)?:( read\(size=583\) failed:)? Connection (closed|reset by peer), session=<[\/\+[:alnum:]]+>$
-
-# Jan  1 00:00:00 debian dovecot: lmtp(user@domain.com)<24417><l2STEE5Nll5hXwAAk+NzKg:2>: sieve: msgid=<user@domain.com>: stored mail into mailbox 'INBOX'
-# Jan  1 00:00:00 debian dovecot: lmtp(user@domain.com)<24417><l2STEE5Nll5hXwAAk+NzKg>: sieve: msgid=<user@domain.com>: stored mail into mailbox 'INBOX'
-
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]:]+>)?: sieve: msgid=<?[[:alnum:]:$+@_.-]+>?: stored mail into mailbox '[[:alnum:]_-]+'$
-
-# Jan  1 00:00:00 debian dovecot: lmtp(user@domain.com)<10252><KYAjLYzslV4MKAAAk+NzKg>: sieve: msgid=<user@domain.com>: forwarded to <user@domain.com>
-# Jan  1 00:00:00 debian dovecot: lmtp(user@domain.com)<24417><l2STEE5Nll5hXwAAk+NzKg:2>: sieve: msgid=<user@domain.com>: forwarded to <user@domain.com>
-
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]:]+>)?: sieve: msgid=<?[[:alnum:]:$+@_.-]+>?: forwarded to <[[:alnum:]@._-]+>$
-
-# Jan  1 00:00:00 debian dovecot: lmtp(24420): Disconnect from local: Client has quit the connection (state=READY)
-
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([-[:alnum:]@\.]+\): Disconnect from local: Client has quit the connection \(state=READY\)$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap-login: Disconnected \(no auth attempts in [0-9]+ secs\): user=<>, rip=[.:[:alnum:]]+, lip=[.:[:alnum:]]+, TLS( handshaking)?:( read\(size=[0-9]+\) failed:)? Connection (closed|reset by peer), session=<[\/\+[:alnum:]]+>$

@@ -26,7 +26,7 @@
 # Jan  1 00:00:00 debian squid[14076]: DNS Socket created at 1.2.3.4, FD 9
 # Jan  1 00:00:00 debian squid[14076]: DNS Socket created at [::], FD 5
 
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: DNS Socket created at [0-9.\[\]:]+, FD [0-9]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ squid\[[[:digit:]]+\]: DNS Socket created at [0-9a-f.\[\]:]+, FD [0-9]+$
 
 # Jan  1 00:00:00 debian squid[14076]: Finished loading MIME types and icons.
 
