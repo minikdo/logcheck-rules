@@ -1,0 +1,16 @@
+# ; -*- mode: conf; fill-column: 99999 -*-
+
+
+# Jan  1 00:00:00 debian dovecot: lmtp(user@domain.com)<24417><l2STEE5Nll5hXwAAk+NzKg:2>: sieve: msgid=<user@domain.com>: stored mail into mailbox 'INBOX'
+# Jan  1 00:00:00 debian dovecot: lmtp(user@domain.com)<24417><l2STEE5Nll5hXwAAk+NzKg>: sieve: msgid=<user@domain.com>: stored mail into mailbox 'INBOX'
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]:]+>)?: sieve: msgid=<?[[:alnum:]:$+@_.-]+>?: stored mail into mailbox '[[:alnum:]_-]+'$
+
+# Jan  1 00:00:00 debian dovecot: lmtp(user@domain.com)<10252><KYAjLYzslV4MKAAAk+NzKg>: sieve: msgid=<user@domain.com>: forwarded to <user@domain.com>
+# Jan  1 00:00:00 debian dovecot: lmtp(user@domain.com)<24417><l2STEE5Nll5hXwAAk+NzKg:2>: sieve: msgid=<user@domain.com>: forwarded to <user@domain.com>
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]:]+>)?: sieve: msgid=<?[[:alnum:]:=$+@_.-]+>?: forwarded to <[[:alnum:]@._-]+>$
+
+# Jan  1 00:00:00 debian dovecot: lmtp(24420): Disconnect from local: Client has quit the connection (state=READY)
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([-[:alnum:]@\.]+\): Disconnect from local: Client has quit the connection \(state=READY\)$
