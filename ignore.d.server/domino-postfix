@@ -1,77 +1,78 @@
 # ; -*- mode: conf; fill-column: 99999 -*-
 
+# --- smtpd ---
+
 # Sep 18 22:55:37 debian postfix/smtpd[13312]: warning: TLS library problem: error:1417D0FC:SSL routines:tls_process_client_hello:unknown protocol:../ssl/statem/statem_srvr.c:938:
 # Sep 18 22:55:38 debian postfix/smtpd[13312]: warning: TLS library problem: error:1417D18C:SSL routines:tls_process_client_hello:version too low:../ssl/statem/statem_srvr.c:974:
 # Sep 18 22:55:39 debian postfix/smtpd[13312]: warning: TLS library problem: error:1409442E:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:../ssl/record/rec_layer_s3.c:1399:SSL alert number 70:
 # Sep 18 22:55:40 debian postfix/smtpd[13312]: warning: TLS library problem: error:1409442E:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:../ssl/record/rec_layer_s3.c:1399:SSL alert number 70:
 # Sep 22 04:29:35 debian postfix/smtpd[26597]: warning: TLS library problem: error:1417A0C1:SSL routines:tls_post_process_client_hello:no shared
-# Oct  3 04:20:03 linode2 postfix/smtpd[9011]: warning: TLS library problem: error:1417A0C1:SSL routines:tls_post_process_client_hello:no shared cipher:../ssl/statem/statem_srvr.c:1404:
-# Nov 15 23:39:59 linode2 postfix/smtpd[20808]: warning: TLS library problem: error:142090FC:SSL routines:tls_early_post_process_client_hello:unknown protocol:../ssl/statem/statem_srvr.c:1636:
-# Nov 15 23:39:59 linode2 postfix/smtpd[20808]: warning: TLS library problem: error:1420918C:SSL routines:tls_early_post_process_client_hello:version too low:../ssl/statem/statem_srvr.c:1661:
+# Oct  3 04:20:03 debian postfix/smtpd[9011]: warning: TLS library problem: error:1417A0C1:SSL routines:tls_post_process_client_hello:no shared cipher:../ssl/statem/statem_srvr.c:1404:
+# Nov 15 23:39:59 debian postfix/smtpd[20808]: warning: TLS library problem: error:142090FC:SSL routines:tls_early_post_process_client_hello:unknown protocol:../ssl/statem/statem_srvr.c:1636:
+# Nov 15 23:39:59 debian postfix/smtpd[20808]: warning: TLS library problem: error:1420918C:SSL routines:tls_early_post_process_client_hello:version too low:../ssl/statem/statem_srvr.c:1661:
 
 ^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtpd\[[0-9]+\]: warning: TLS library problem: error:[[:xdigit:]]+:SSL routines:(tls_process_client_hello:(unknown protocol|version too low):|tls_post_process_client_hello:no shared cipher:|tls_early_post_process_client_hello:(unknown protocol:|version too low:)|ssl3_read_bytes:tlsv[0-9]+ alert protocol version:|tls_post_process_client_hello:no shared)?(..\/ssl\/(record|statem)\/(statem_srvr.c:[0-9]+:|rec_layer_s3.c:[0-9]+:SSL alert number [0-9]+:))?$
 
-# ?
-
-^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtpd\[[0-9]+\]: warning: TLS library problem: error:[[:xdigit:]]+:SSL routines:ssl3_read_bytes:sslv3 alert bad certificate:[\/_.:[:alnum:]]+ alert number [[:xdigit:]]+:$
-
-# ?
-
-^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix(/submission|/smtps|/[0-9]+)?/smtpd\[[[:digit:]]+\]: disconnect from [[:alnum:]_\.-]+\[[[:alnum:]\.:]+\] commands=[0-9]/[0-9]$
-
-
-# Jun 11 12:20:40 linode2 postfix/smtpd[19535]: NOQUEUE: reject: MAIL from oakwood.hyperslice.net[109.203.106.148]: 552 5.3.4 Message size exceeds fixed limit; proto=ESMTP helo=<oakwood.hyperslice.net>
-
-\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix(/submission|/smtps|/[0-9]+)?/smtpd\[[[:digit:]]+\]: NOQUEUE: reject: MAIL from [\.[:alnum:]]+\[[\.[:alnum:]]+\]: 552 5\.3\.4 Message size exceeds fixed limit; proto=ESMTP helo=<[.[:alnum:]]+>$
-
-
-# Sep  9 09:17:58 debian postfix/smtpd[5361]: Anonymous TLS connection established from mail-lj1-f177.google.com[209.85.208.177]: TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits) key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256
-# Nov 16 02:09:33 linode2 postfix/smtpd[27303]: Anonymous TLS connection established from ms1622.m.lrmailr.pl[164.132.49.188]: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange X25519 server-signature RSA-PSS (2048 bits)
-
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix(\/submission|\/smtps|\/[0-9]+)?\/smtpd\[[[:digit:]]+\]: Anonymous TLS connection established from [-._[:alnum:]]+\[[:.[:digit:]]+\]: TLSv[\.0-9]+ with cipher [_[:alnum:]-]+ \([0-9]+\/[0-9]+ bits\) key-exchange [_[:alnum:]-]+ server-signature [_[:alnum:]-]+ \([0-9]+ bits\)( server-digest [_[:alnum:]-]+)?$
-
-
-# Nov 14 05:14:24 router postfix/smtpd[21323]: warning: unknown[1.2.3.4]: SASL Plain authentication failed:
-# Nov 14 05:21:37 router postfix/smtpd[21372]: warning: 123domain.com[1.2.3.4]: SASL Plain authentication failed:
+# Nov 14 05:14:24 debian postfix/smtpd[21323]: warning: unknown[1.2.3.4]: SASL Plain authentication failed:
+# Nov 14 05:21:37 debian postfix/smtpd[21372]: warning: 123domain.com[1.2.3.4]: SASL Plain authentication failed:
 
 ^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtpd\[[0-9]+\]: warning: [-.[:alnum:]]+\[[.[:digit:]]+\]: SASL Plain authentication failed:$
-
-
-# Dec 13 11:50:26 linode2 postfix/cleanup[3960]: CD1D940A83: message-id=  
-
-^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/cleanup\[[0-9]+\]: [[:xdigit:]]+: message-id=$
-
 
 # Nov 16 05:31:27 debian-linode postfix/smtpd[2253]: warning: hostname 30.223.46.89.baremetal.zare.com does not resolve to address 89.46.223.30: No address associated with hostname
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix(\/submission|\/smtps|\/[0-9]+)?\/smtpd\[[[:digit:]]+\]: warning: hostname [[:alnum:].]+ does not resolve to address [.[:digit:]]+: No address associated with hostname$
 
+# Apr 30 07:02:05 debian postfix/smtpd[20567]: warning: TLS library problem: error:14209102:SSL routines:tls_early_post_process_client_hello:unsupported protocol:../ssl/statem/statem_srvr.c:1661:
 
-# Jan 01 00:00:00 debian postfix/smtp[11111]: 172733EFE6: Cannot start TLS: handshake failure
-# Jan 01 00:00:00 debian postfix/smtp[11111]: B8B6B3E588: Cannot start TLS: handshake failure
-# Jan 01 00:00:00 debian postfix/smtp[11111]: D5FD93E557: Cannot start TLS: handshake failure
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtpd\[[[:digit:]]+\]: warning: TLS library problem: error:[[:alnum:]]+:SSL routines:tls_early_post_process_client_hello:unsupported protocol:\.\.\/ssl\/statem\/statem_srvr.c:[0-9]+:$
 
-\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: [[:alnum:]]+: Cannot start TLS: handshake failure$
-
-
-# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to eu-smtp-inbound-2.mimecast.com[195.130.217.201]:25: -1
-# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to mail.po-mysl.pl[185.204.218.208]:25: -1
-# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to mail.po-mysl.pl[185.204.218.208]:25: -1
-# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to mail.po-mysl.pl[185.204.218.208]:25: -1
-# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to mail.po-mysl.pl[185.204.218.208]:25: -1
-
-\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: SSL_connect error to [\.[:alnum:]-]+\[[.0-9]+\]:[0-9]+: [[:digit:]-]+$
-
-
-# Jan 01 00:00:00 debian postfix/smtp[11111]: warning: TLS library problem: error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../ssl/record/ssl3_record.c:332:
-# Jan 01 00:00:00 debian postfix/smtp[11111]: warning: TLS library problem: error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../ssl/record/ssl3_record.c:332:
-# Jan 01 00:00:00 debian postfix/smtp[11111]: warning: TLS library problem: error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../ssl/record/ssl3_record.c:332:
-# Jan 01 00:00:00 debian postfix/smtp[11111]: warning: TLS library problem: error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../ssl/record/ssl3_record.c:332:
-
-\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: warning: TLS library problem: error:[[:alnum:]]+:SSL routines:ssl3_get_record:wrong version number:..\/ssl\/record\/ssl3_record.c:[0-9]+:$
-
-
-# Jan 01 00:00:00 debian postfix/smtpd[11111]: Anonymous TLS connection established from z13.domain.com[1.2.3.4]: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256
 # Jan 01 00:00:00 debian postfix/smtpd[11111]: Anonymous TLS connection established from z15.domain.com[1.2.3.4]: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256
 
 ^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtpd\[[0-9]+\]: Anonymous TLS connection established from [.[:alnum:]-]+\[[:.0-9a-f]+\]: TLSv[.0-9]+ with cipher [_[:alnum:]]+ \([\/0-9]+ bits\) key-exchange (ECDHE|X25519)( \([[:alnum:]-]+\))? server-signature [[:alnum:]-]+ \([0-9]+ bits\)( server-digest [[:alnum:]]+)?$
+
+#
+
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtpd\[[0-9]+\]: warning: TLS library problem: error:[[:xdigit:]]+:SSL routines:ssl3_read_bytes:sslv3 alert bad certificate:[\/_.:[:alnum:]]+ alert number [[:xdigit:]]+:$
+
+# Jan 01 00:00:00 debian postfix/smtp[11111]: 172733EFE6: Cannot start TLS: handshake failure
+
+# --- smtp ---
+
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: [[:alnum:]]+: Cannot start TLS: handshake failure$
+
+# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to eu-smtp-inbound-2.mimecast.com[195.130.217.201]:25: -1
+# Jan 01 00:00:00 debian postfix/smtp[11111]: SSL_connect error to mail.po-mysl.pl[185.204.218.208]:25: -1
+
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: SSL_connect error to [\.[:alnum:]-]+\[[.0-9]+\]:[0-9]+: [[:digit:]-]+$
+
+# Jan 01 00:00:00 debian postfix/smtp[11111]: warning: TLS library problem: error:1408F10B:SSL routines:ssl3_get_record:wrong version number:../ssl/record/ssl3_record.c:332:
+
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: warning: TLS library problem: error:[[:alnum:]]+:SSL routines:ssl3_get_record:wrong version number:..\/ssl\/record\/ssl3_record.c:[0-9]+:$
+
+# Apr 30 09:19:07 debian postfix/smtp[28712]: warning: TLS library problem: error:1409442E:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:../ssl/record/rec_layer_s3.c:1544:SSL alert number 70:
+
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: warning: TLS library problem: error:[[:alnum:]]+:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:..\/ssl\/record\/rec_layer_s3.c:[0-9]+:SSL alert number [0-9]+:$
+
+# Apr 30 11:02:05 domino postfix/smtp[6625]: Untrusted TLS connection established to poczta.cos.pl[133.111.171.21]:25: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: (Untrusted|Trusted) TLS connection established to [-._[:alnum:]]+\[[0-9a-f:.]+\]:[0-9]+: TLSv1\.3 with cipher [_[:alnum:]-]+ \([0-9]+\/[0-9]+ bits\) key-exchange [[:alnum:]]+ server-signature [[:alnum:]-]+ \([P0-9-]+( bits)?\) server-digest [[:alnum:]]+$
+
+# --- submission smtps ---
+
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix(/submission|/smtps|/[0-9]+)?/smtpd\[[[:digit:]]+\]: disconnect from [[:alnum:]_\.-]+\[[[:alnum:]\.:]+\] commands=[0-9]/[0-9]$
+
+# Jun 11 12:20:40 debian postfix/smtpd[19535]: NOQUEUE: reject: MAIL from oakwood.hyperslice.net[109.203.106.148]: 552 5.3.4 Message size exceeds fixed limit; proto=ESMTP helo=<oakwood.hyperslice.net>
+
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix(/submission|/smtps|/[0-9]+)?/smtpd\[[[:digit:]]+\]: NOQUEUE: reject: MAIL from [\.[:alnum:]]+\[[\.[:alnum:]]+\]: 552 5\.3\.4 Message size exceeds fixed limit; proto=ESMTP helo=<[.[:alnum:]]+>$
+
+# Sep  9 09:17:58 debian postfix/smtpd[5361]: Anonymous TLS connection established from mail-lj1-f177.google.com[209.85.208.177]: TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits) key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256
+# Nov 16 02:09:33 debian postfix/smtpd[27303]: Anonymous TLS connection established from ms1622.m.lrmailr.pl[164.132.49.188]: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange X25519 server-signature RSA-PSS (2048 bits)
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix(\/submission|\/smtps|\/[0-9]+)?\/smtpd\[[[:digit:]]+\]: Anonymous TLS connection established from [-._[:alnum:]]+\[[:.[:digit:]]+\]: TLSv[\.0-9]+ with cipher [_[:alnum:]-]+ \([0-9]+\/[0-9]+ bits\) key-exchange [_[:alnum:]-]+ server-signature [_[:alnum:]-]+ \([0-9]+ bits\)( server-digest [_[:alnum:]-]+)?$
+
+# --- cleanup ---
+
+# Dec 13 11:50:26 debian postfix/cleanup[3960]: CD1D940A83: message-id=  
+
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/cleanup\[[0-9]+\]: [[:xdigit:]]+: message-id=$
+

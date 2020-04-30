@@ -1,4 +1,4 @@
-# ; -*- mode: text; fill-column: 99999 -*-
+# ; -*- mode: conf; fill-column: 99999 -*-
 
 # Jun 23 07:09:04 router systemd[1]: phpsessionclean.service: Succeeded.
 # Jun 23 16:15:03 router systemd[1]: apt-daily.service: Succeeded.
@@ -55,8 +55,9 @@
 
 # systemd-logind:
 # Sep 20 13:17:24 router systemd-logind[486]: Session 760 logged out. Waiting for processes to exit.
+# Apr 28 21:56:49 debian systemd-logind[398]: Session c4 logged out. Waiting for processes to exit.
 
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd-logind\[[ :[:digit:]]+\]: Session [0-9]+ logged out. Waiting for processes to exit.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd-logind\[[ :[:digit:]]+\]: Session [[:alnum:]]+ logged out. Waiting for processes to exit.$
 
 # D-Bus:
 # Sep 20 08:03:29 router systemd[658]: Listening on D-Bus User Message Bus Socket.
