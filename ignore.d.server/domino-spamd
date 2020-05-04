@@ -13,3 +13,26 @@
 # Apr 20 11:39:28 debian spamd[23580]: spamd: using default config for user@domain.com: /home/vmail/domain.com/.spamassasin/user_-1/user_prefs
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd\[[0-9]+\]: spamd: using default config for [[:alnum:].@_-]+: \/home\/vmail\/[[:alnum:]_.-]+\/.spamassassin\/[[:alnum:]_-]+\/user_prefs$
+
+# Jan  1 00:00:00 debian spamd[19297]: spamd: server socket closed, type IO::Socket::IP
+# Jan  1 00:00:00 debian spamd[19297]: spamd: server socket closed, type IO::Socket::IP
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd\[[0-9]+\]: spamd: server socket closed, type IO::Socket::IP$
+
+# Jan  1 00:00:00 debian spamd[6670]: zoom: able to use 371/372 'body_0' compiled rules (99.731%)
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd\[[0-9]+\]: zoom: able to use [0-9\/]+ \'body_0\' compiled rules \([0-9.]+\%\)$
+
+# Jan  1 00:00:00 debian spamd[4108]: prefork: child states: II [... logline repeated 47 times]
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd\[[0-9]+\]: prefork: child states: II \[\.\.\. logline repeated [0-9]+ times\]$
+
+# Jan  1 00:00:00 debian spamd[6670]: spamd: server started on IO::Socket::IP [::1]:783, IO::Socket::IP [127.0.0.1]:783 (running version 3.4.2)
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd\[[0-9]+\]: spamd: server started on IO::Socket::IP \[::1\]:783, IO::Socket::IP \[[0-9.]+\]:783 \(running version [0-9.]+\)$
+
+# Jan  1 00:00:00 debian spamd: spamd: restarting using '/usr/sbin/spamd -d --pidfile=/run/spamd.pid -u debian-spamd -l --create-prefs -x --virtual-config-dir=/home/vmail/%d/.spamassassin/%l --max-children 5 --helper-home-dir'
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd: spamd: restarting using \'\/usr\/sbin\/spamd -d --pidfile=\/run\/spamd\.pid -u debian-spamd -l --create-prefs -x --virtual-config-dir=[[:alnum:]\/\%\.]+ --max-children [0-9]+ --helper-home-dir\'$
+
+

@@ -5,6 +5,8 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: auth: Warning: Event [[:alnum:]]+ leaked \(parent=\(nil\)\): auth-client-connection.c:[0-9]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: auth: plain\(\?,[.[:digit:]]+\): Request timed out waiting for client to continue authentication \([[:digit:]]+ secs\)$
 
+# imap
+
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap: Connection closed in=[[:digit:]]+ out=[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]]+>)?: Connection closed \((UID FETCH|UID STORE|LIST|NOOP|STATUS|append)? finished [0-9.]+ secs ago\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+( trashed=[0-9]+)?( hdr_count=[0-9]+)?( hdr_bytes=[0-9]+)?( body_count=[0-9]+)?( body_bytes=[0-9]+)?$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]]+>)?: Disconnected for inactivity in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
@@ -12,13 +14,19 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([\._@[:alnum:]-]+\)<[[:digit:]]+><[\+\/[:alnum:]]+>: Logged out in=[[:digit:]]+ out=[[:digit:]]+ deleted=[[:digit:]]+ expunged=[[:digit:]]+ trashed=[[:digit:]]+ hdr_count=[[:digit:]]+ hdr_bytes=[[:digit:]]+ body_count=[[:digit:]]+ body_bytes=[[:digit:]]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]]+>)?: Connection closed(: read\(size=[0-9]+\))?( failed: Connection reset by peer)? \(IDLE running for [0-9.]+ \+ waiting input for [0-9.]+ secs, [0-9]+ B in \+ [0-9\+]+ B out, state=wait-input\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+( trashed=[0-9]+)?( hdr_count=[0-9]+)?( hdr_bytes=[0-9]+)?( body_count=[0-9]+)?( body_bytes=[0-9]+)?$
 
-# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<16443><i7h23j6c8KBPvAGh>: Connection closed (noop finished 0.081 secs ago) in=1207 out=74860 deleted=0 expunged=0 trashed=0 hdr_count=1 hdr_bytes=310 body_count=0 body_bytes=0
-# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<18518><V3/zyZWcSoJTBJQq>: Connection closed (IDLE finished 137.627 secs ago) in=1074 out=5163 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
-# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<20806><pfn8vJac0MxTBJQq>: Connection closed (UID SEARCH finished 2.242 secs ago) in=54 out=1167 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
-# Jan 01 00:00:00 debian dovecot: imap(user@domain.com)<13658><NnDnez2clJRPvAGh>: Connection closed (UID fetch finished 0.145 secs ago) in=9581 out=9495290 deleted=0 expunged=0 trashed=0 hdr_count=4 hdr_bytes=1467 body_count=144 body_bytes=9365757
+# Jan  1 00:00:00 debian dovecot: imap(user@domain.com)<28998><I1mJ+MqktMMfusUW>: Connection closed (ID finished 0.296 secs ago) in=89 out=448 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+# Jan  1 00:00:00 debian dovecot: imap(user@domain.com)<29432><sPotR8uk2MMfusUW>: Connection closed (SELECT finished 0.096 secs ago) in=121 out=981 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+# Jan  1 00:00:00 debian dovecot: imap(user@domain.com)<16443><i7h23j6c8KBPvAGh>: Connection closed (noop finished 0.081 secs ago) in=1207 out=74860 deleted=0 expunged=0 trashed=0 hdr_count=1 hdr_bytes=310 body_count=0 body_bytes=0
+# Jan  1 00:00:00 debian dovecot: imap(user@domain.com)<18518><V3/zyZWcSoJTBJQq>: Connection closed (IDLE finished 137.627 secs ago) in=1074 out=5163 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+# Jan  1 00:00:00 debian dovecot: imap(user@domain.com)<20806><pfn8vJac0MxTBJQq>: Connection closed (UID SEARCH finished 2.242 secs ago) in=54 out=1167 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+# Jan  1 00:00:00 debian dovecot: imap(user@domain.com)<13658><NnDnez2clJRPvAGh>: Connection closed (UID fetch finished 0.145 secs ago) in=9581 out=9495290 deleted=0 expunged=0 trashed=0 hdr_count=4 hdr_bytes=1467 body_count=144 body_bytes=9365757
 # Apr 21 22:22:01 debian dovecot: imap(user@domain.com)<37293><E9uAwNKj3tZTHSoc>: Connection closed (No commands sent) in=0 out=374 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
 
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([.@[:alnum:]]+\)<[0-9]+><[\/+[:alnum:]]+>: Connection closed \(((noop|IDLE|UID (SEARCH|fetch)) finished [.0-9]+ secs ago|No commands sent)\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([.@[:alnum:]]+\)<[0-9]+><[\/+[:alnum:]]+>: Connection closed \(((ID|SELECT|noop|IDLE|UID (SEARCH|fetch)) finished [.0-9]+ secs ago|No commands sent)\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
+
+# May  3 09:23:30 debian dovecot: imap(abc@domain.com)<11038><cRsjBbmkyLYfusUW>: Connection closed (IDLE running for 0.014 + waiting input for 558.906 secs, 0.001 in locks, 2 B in + 10 B out, state=wait-input) in=199 out=1429 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([.@[:alnum:]]+\)<[0-9]+><[\/+[:alnum:]]+>: Connection closed \(IDLE running for [0-9.]+ \+ waiting input for [0-9.]+ secs, [0-9.]+ in locks, [0-9.]+ B in \+ [0-9.]+ B out, state=wait-input\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
 
 # Jan  1 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 0 secs): user=<>, rip=1.2.3.4, lip=1.2.3.4, TLS handshaking: SSL connection closed during handshake, session=<FA84PESjC+hZKElg>
 # Jan  1 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 5 secs): user=<>, rip=1.2.3.4, lip=1.2.3.4, TLS handshaking: SSL connection closed during handshake, session=<as/c4UyjV/ZZKEnQ>

@@ -18,9 +18,9 @@
 
 ^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtpd\[[0-9]+\]: warning: [-.[:alnum:]]+\[[.[:digit:]]+\]: SASL Plain authentication failed:$
 
-# Nov 16 05:31:27 debian-linode postfix/smtpd[2253]: warning: hostname 30.223.46.89.baremetal.zare.com does not resolve to address 89.46.223.30: No address associated with hostname
+# Jan  1 00:00:00 debian postfix/smtpd[21504]: warning: hostname zg-0428c-216.stretchoid.com does not resolve to address 1.2.3.4: No address associated with hostname
 
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix(\/submission|\/smtps|\/[0-9]+)?\/smtpd\[[[:digit:]]+\]: warning: hostname [[:alnum:].]+ does not resolve to address [.[:digit:]]+: No address associated with hostname$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix(\/submission|\/smtps|\/[0-9]+)?\/smtpd\[[[:digit:]]+\]: warning: hostname [[:alnum:].-]+ does not resolve to address [.[:digit:]]+: No address associated with hostname$
 
 # Apr 30 07:02:05 debian postfix/smtpd[20567]: warning: TLS library problem: error:14209102:SSL routines:tls_early_post_process_client_hello:unsupported protocol:../ssl/statem/statem_srvr.c:1661:
 
