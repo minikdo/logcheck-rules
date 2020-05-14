@@ -1,0 +1,12 @@
+- hosts: servers,!nanode,!m81
+
+  remote_user: root
+
+  gather_facts: false
+
+  tasks:
+    - name: sync
+      synchronize:
+        src: ignore.d.server
+        dest: /etc/logcheck
+        delete: yes
