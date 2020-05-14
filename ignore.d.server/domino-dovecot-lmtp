@@ -1,6 +1,5 @@
 # ; -*- mode: conf; fill-column: 99999 -*-
 
-
 # Jan  1 00:00:00 debian dovecot: lmtp(user@domain.com)<24417><l2STEE5Nll5hXwAAk+NzKg:2>: sieve: msgid=<user@domain.com>: stored mail into mailbox 'INBOX'
 # Jan  1 00:00:00 debian dovecot: lmtp(user@domain.com)<24417><l2STEE5Nll5hXwAAk+NzKg>: sieve: msgid=<user@domain.com>: stored mail into mailbox 'INBOX'
 # Apr  1 03:42:34 debian dovecot: lmtp(do@minik.pl)<27587><KlP7C4qVo17DawAAK/wqrw>: sieve: msgid=? <VI1PR0501MB22566805495B69687A1A6552FAD00@VI1PR0501MB2256.eurprd05.prod.outlook.com>: stored mail into mailbox 'debian-user'
@@ -12,10 +11,8 @@
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]:]+>)?: sieve: msgid=<?[[:alnum:]:=$+@_.-]+>?: forwarded to <[[:alnum:]@._-]+>$
 
+# May  5 00:57:29 debian dovecot: lmtp(9716): Disconnect from local: Remote closed connection (state=READY)
 # Jan  1 00:00:00 debian dovecot: lmtp(24420): Disconnect from local: Client has quit the connection (state=READY)
 
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([-[:alnum:]@\.]+\): Disconnect from local: Client has quit the connection \(state=READY\)$
-
-
-
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: lmtp\([-[:alnum:]@\.]+\): Disconnect from local: (Client has quit the|Remote closed) connection \(state=READY\)$
 

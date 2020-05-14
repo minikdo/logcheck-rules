@@ -1,4 +1,4 @@
-# ; -*- mode: text; fill-column: 99999 -*-
+# ; -*- mode: conf; fill-column: 99999 -*-
 
 # Jun 16 08:28:17 debian kernel: [219862.976978] input: 40:EF:4C:33:AE:21 as /devices/virtual/input/input14
 
@@ -17,3 +17,7 @@ Jun 17 18:47:23 router kernel: [6425157.863842] ip6_tables: (C) 2000-2006 Netfil
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel: \[[ .[:digit:]]+\] INFO: NMI handler \(perf_event_nmi_handler\) took too long to run: [.[:digit:]]+ msecs$
 
+# Jan  1 00:00:00 debian kernel: [5674129.042703] device br0 entered promiscuous mode
+# Jan  1 00:00:00 debian kernel: [5674141.471188] device br0 left promiscuous mode
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel: \[[ .[:digit:]]+\] device [[:alnum:]]+ (entered|left) promiscuous mode$
