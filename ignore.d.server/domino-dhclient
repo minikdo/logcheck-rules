@@ -1,0 +1,5 @@
+# ; -*- mode: conf; fill-column: 99999 -*-
+
+# May  3 04:14:16 debian dhclient[442]: DHCPREQUEST for 1.2.3.4 on eth0 to 2.3.4.5 port 67
+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ dhclient\[[[:digit:]]+\]: DHCP(REQUEST|RELEASE) (for [.0-9]{7,15} )?on [[:alnum:].-]+ to [.0-9]{7,15} port 67( \(xid=0x[[:xdigit:]]{8}\))?$

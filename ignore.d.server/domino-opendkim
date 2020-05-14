@@ -1,0 +1,5 @@
+# ; -*- mode: conf; fill-column: 99999 -*-
+
+# Jan  1 00:00:00 debian opendkim[689]: AC9103E9A5: external host mail-oi1-x22b.google.com attempted to send as costam.org.pl
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ opendkim\[[[:digit:]]+\]: [[:xdigit:]]{10,11}: external host [[:alnum:]\.-]+ attempted to send as [[:alnum:]\.-]+$
