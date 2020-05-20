@@ -1,12 +1,14 @@
 # ; -*- mode: conf; fill-column: 99999 -*-
 
-# auth
 
+# Jan  1 00:00:00 debian dovecot[4316]: doveadm(john.doe@do-main.com): Fatal: connect(2a01:7e01::f03c:91ff:fe92:641e:12345) failed: No route to host
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot\[[0-9]+\]: doveadm\([@.[:alnum:]-]+\): Fatal: connect\([\:[:xdigit:]]+\) failed: No route to host$
+
+# auth
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: auth: Warning: Event [[:alnum:]]+ leaked \(parent=\(nil\)\): auth-client-connection.c:[0-9]+$
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: auth: plain\(\?,[.[:digit:]]+\): Request timed out waiting for client to continue authentication \([[:digit:]]+ secs\)$
 
 # imap
-
 # Jan  1 00:00:00 debian dovecot: imap: Warning: Time jumped forwards 14 seconds
 # Jan  1 00:00:00 debian dovecot: imap: Warning: Time jumped forwards 28 seconds
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap: Warning: Time jumped forwards [0-9]+ seconds$

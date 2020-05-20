@@ -62,8 +62,11 @@
 ^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix(/submission|/smtps|/[0-9]+)?/smtpd\[[[:digit:]]+\]: disconnect from [[:alnum:]_\.-]+\[[[:alnum:]\.:]+\] commands=[0-9]/[0-9]$
 
 # Jun 11 12:20:40 debian postfix/smtpd[19535]: NOQUEUE: reject: MAIL from oakwood.hyperslice.net[109.203.106.148]: 552 5.3.4 Message size exceeds fixed limit; proto=ESMTP helo=<oakwood.hyperslice.net>
-
 ^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix(/submission|/smtps|/[0-9]+)?/smtpd\[[[:digit:]]+\]: NOQUEUE: reject: MAIL from [\.[:alnum:]]+\[[\.[:alnum:]]+\]: 552 5\.3\.4 Message size exceeds fixed limit; proto=ESMTP helo=<[.[:alnum:]]+>$
+
+# Jan  1 00:00:00 debian postfix/smtpd[3169]: NOQUEUE: reject: RCPT from ip242.ip-54-38-110.eu[1.2.3.4]: 550 5.7.27 <john.doe@do-main.com>: Sender address rejected: Domain example.com does not accept mail (nullMX); from=<john.doe@do-main.com> to=<john.doe@do-main.com> proto=SMTP helo=<win-51ct1cgvsd8.domain>
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix(\/submission|\/smtps|\/[0-9]+)?\/smtpd\[[[:digit:]]+\]: NOQUEUE: reject: RCPT from [.[:alnum:]-]+\[[.0-9]+\]: [0-9]+ [.0-9]+ <[@._[:alnum:]-]+>: Sender address rejected: Domain example.com does not accept mail \(nullMX\); from=<[@._[:alnum:]-]+> to=<[@._[:alnum:]-]+> proto=SMTP helo=<[._[:alnum:]-]+>$
+
 
 # Sep  9 09:17:58 debian postfix/smtpd[5361]: Anonymous TLS connection established from mail-lj1-f177.google.com[209.85.208.177]: TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits) key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256
 # Nov 16 02:09:33 debian postfix/smtpd[27303]: Anonymous TLS connection established from ms1622.m.lrmailr.pl[164.132.49.188]: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange X25519 server-signature RSA-PSS (2048 bits)
