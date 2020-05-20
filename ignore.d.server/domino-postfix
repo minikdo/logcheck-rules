@@ -54,8 +54,8 @@
 ^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: warning: TLS library problem: error:[[:alnum:]]+:SSL routines:ssl3_read_bytes:tlsv1 alert protocol version:..\/ssl\/record\/rec_layer_s3.c:[0-9]+:SSL alert number [0-9]+:$
 
 # Apr 30 11:02:05 domino postfix/smtp[6625]: Untrusted TLS connection established to poczta.cos.pl[133.111.171.21]:25: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256
-
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: (Untrusted|Trusted) TLS connection established to [-._[:alnum:]]+\[[0-9a-f:.]+\]:[0-9]+: TLSv1\.3 with cipher [_[:alnum:]-]+ \([0-9]+\/[0-9]+ bits\) key-exchange [[:alnum:]]+ server-signature [[:alnum:]-]+ \([P0-9-]+( bits)?\) server-digest [[:alnum:]]+$
+# Jan  1 00:00:00 debian postfix/smtp[28014]: Trusted TLS connection established to mail.galapp.net[1.2.3.4]:25: TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits) key-exchange ECDHE (P-256) server-signature RSA-PSS (2048 bits) server-digest SHA256
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ postfix\/smtp\[[[:digit:]]+\]: (Untrusted|Trusted) TLS connection established to [-._[:alnum:]]+\[[0-9a-f:.]+\]:[0-9]+: TLSv1\.3 with cipher [_[:alnum:]-]+ \([0-9]+\/[0-9]+ bits\) key-exchange [[:alnum:]]+( \(P-[0-9]+\))? server-signature [[:alnum:]-]+ \([P0-9-]+( bits)?\) server-digest [[:alnum:]]+$
 
 # --- submission smtps ---
 
