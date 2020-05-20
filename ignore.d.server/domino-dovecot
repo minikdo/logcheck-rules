@@ -1,6 +1,5 @@
 # ; -*- mode: conf; fill-column: 99999 -*-
 
-
 # Jan  1 00:00:00 debian dovecot[4316]: doveadm(john.doe@do-main.com): Fatal: connect(2a01:7e01::f03c:91ff:fe92:641e:12345) failed: No route to host
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot\[[0-9]+\]: doveadm\([@.[:alnum:]-]+\): Fatal: connect\([\:[:xdigit:]]+\) failed: No route to host$
 
@@ -42,6 +41,9 @@
 
 # Jan  1 00:00:00 debian dovecot: imap-login: Disconnected (auth failed, 1 attempts in 6 secs): user=<user@domain.com>, method=PLAIN, rip=1.2.3.4, lip=1.2.3.4, TLS: Connection closed, session=<EbVGd0WjTa+3WdNe>
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap-login: Disconnected \(auth failed, [0-9]+ attempts in [0-9]+ secs\): user=<[[:alnum:]@_.-]+>, method=PLAIN, rip=[.:[:alnum:]]+, lip=[.:[:alnum:]]+, TLS: Connection closed, session=<[[:alnum:]\+\/]+>$
+
+# Jan  1 00:00:00 debian dovecot: imap-login: Disconnected (client didn't finish SASL auth, waited 1 secs): user=<>, method=PLAIN, rip=1.2.3.4, lip=1.2.3.4, TLS: read(size=401) failed: Connection reset by peer, session=<zl9waw6mJ+/CKQ3P>
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap-login: Disconnected \(client didn\'t finish SASL auth, waited 1 secs\): user=<[[:alnum:]@_.-]*>, method=PLAIN, rip=[.:[:alnum:]]+, lip=[.:[:alnum:]]+, TLS: read\(size=[0-9]+\) failed: Connection reset by peer, session=<[+\/[:alnum:]]+>$
 
 # Jan 01 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 1 secs): user=<>, rip=1.2.3.4, lip=1.2.3.4, TLS: Connection closed, session=<sTF0vUKc1rvRYbSh>
 # Jan 01 00:00:00 debian dovecot: imap-login: Disconnected (no auth attempts in 1 secs): user=<>, rip=2600:3c03::f03c:92ff:fe37:de06, lip=2a01:7e01::f03c:91ff:fe92:641e, TLS handshaking: Connection closed, session=<wBWyTkOcWtomADwDAAAAAPA8kv/+N94G>

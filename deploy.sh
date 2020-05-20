@@ -2,6 +2,6 @@
 
 set -e
 
-./test.sh
+./test.sh && echo "test done."
 
 ansible-playbook deploy.yml
