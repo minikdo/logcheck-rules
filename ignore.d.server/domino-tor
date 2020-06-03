@@ -1,26 +1,32 @@
 # ; -*- mode: conf; fill-column: 99999 -*-
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Your network connection speed appears to have changed. Resetting timeout to [[:digit:]]+s after [[:digit:]]+ timeouts and [[:digit:]]+ buildtimes.$
+
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: We now have enough directory information to build circuits.$
+
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: I learned some more directory information, but not enough to build a circuit: We're missing descriptors for [/[:digit:]]+ of our primary entry guards \(total microdescriptors: [/[:digit:]]+\).$
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Our directory information is no longer up-to-date enough to build circuits: We're missing descriptors for [/[:digit:]]+ of our primary entry guards \(total microdescriptors: [/[:digit:]]+\).$
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: I learned some more directory information, but not enough to build a circuit: We're missing descriptors for [\/[:digit:]]+ of our primary entry guards \(total microdescriptors: [\/[:digit:]]+\). That's ok. We will try to fetch missing descriptors soon.$
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Our directory information is no longer up-to-date enough to build circuits: We're missing descriptors for [\/[:digit:]]+ of our primary entry guards \(total microdescriptors: [\/[:digit:]]+\).( That's ok. We will try to fetch missing descriptors soon.)?$
+
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]:  Your Guard grocock ([\$[:alnum:]]+) is failing a very large amount of circuits. Most likely this means the Tor network is overloaded, but it could also mean an attack against you or potentially the guard itself. Success counts are [/[:digit:]]+. Use counts are [/[:digit:]]+. [[:digit:]]+ circuits completed, [[:digit:]]+ were unusable, [[:digit:]]+ collapsed, and [[:digit:]]+ timed out. For reference, your timeout cutoff is [[:digit:]]+ seconds.$
+
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Average packaged cell fullness: [.[:digit:]]+\%. TLS write overhead: [.[:digit:]]+\%$
 
 # Jun 25 19:20:39 router Tor[992]: Heartbeat: Tor's uptime is 6:00 hours, with 6 circuits open. I've sent 878 kB and received 1.70 MB.
-
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Heartbeat: Tor's uptime is( [0-9]+ days)? [[:digit:]:]+ hours, with [0-9]+ circuits open. I've sent [.[:digit:]]+ [[:alnum:]]{1,2} and received [.[:digit:]]+ [[:alnum:]]{1,2}.$
 
 # Nov  7 00:01:05 debian Tor[14367]: Read configuration file "/usr/share/tor/tor-service-defaults-torrc".
 # Nov  7 00:01:05 debian Tor[14367]: Read configuration file "/etc/tor/torrc".
-
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Read configuration file "[[:alnum:]\/-]+".$
 
 # Nov  7 00:01:05 debian Tor[14367]: Received reload signal (hup). Reloading config and resetting internal state.
-
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Received reload signal \(hup\)\. Reloading config and resetting internal state\.$
 
 
 # Jan 01 00:00:00 debian Tor[14367]: Requested exit point '$39C1B28407EAC759801AFCB7106D5DC05B42A8C9' is not known. Closing.
-
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Requested exit point \'[[:alnum:]$]+\' is not known. Closing.$
+
+# Jun  2 11:59:22 dell-r710 Tor[2585]: Failed to find node for hop #1 of our path. Discarding this circuit.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Failed to find node for hop #[0-9]+ of our path\. Discarding this circuit\.$

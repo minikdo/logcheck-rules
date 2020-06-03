@@ -1,5 +1,11 @@
 # ; -*- mode: conf; fill-column: 99999 -*-
 
+# Jan  1 00:00:00 debian postfix/postfix-script[5427]: refreshing the Postfix mail system
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/postfix-script\[[0-9]+\]: refreshing the Postfix mail system$
+
+# Jan  1 00:00:00 debian postfix/master[1634]: reload -- version 3.4.10, configuration /etc/postfix
+^\w{3} [ :[:digit:]]{11} [_[:alnum:]-]+ postfix\/master\[[0-9]+\]: reload -- version [.0-9]+, configuration \/etc\/postfix$
+
 # --- smtpd ---
 
 # Sep 18 22:55:37 debian postfix/smtpd[13312]: warning: TLS library problem: error:1417D0FC:SSL routines:tls_process_client_hello:unknown protocol:../ssl/statem/statem_srvr.c:938:
