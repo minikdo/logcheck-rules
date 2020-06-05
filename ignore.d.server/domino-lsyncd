@@ -1,0 +1,19 @@
+# ; -*- mode: conf; fill-column: 99999 -*-
+
+# May 27 13:02:26 debian systemd[31861]: Created slice lsyncd.slice.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: (Created|Removed) slice lsyncd.slice.$
+
+# May 27 13:04:58 debian systemd[31861]: lsyncd@pix2.service: Main process exited, code=exited, status=143/n/a
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: lsyncd@pix2.service: Main process exited, code=exited, status=[0-9]+\/n\/a$
+
+# May 27 13:04:58 debian systemd[31861]: lsyncd@pix2.service: Failed with result 'exit-code'.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[0-9]+\]: lsyncd@pix2.service: Failed with result 'exit-code'.$
+
+# May 27 13:02:26 debian lsyncd[31871]: 13:02:26 Normal: --- Startup ---
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ lsyncd\[[0-9]+\]: [\:[:digit:]]+ Normal: --- (Startup|TERM signal, fading) ---$
+
+# May 27 13:02:26 debian lsyncd[31871]: 13:02:26 Normal: recursive startup rsync: /var/www/adm/pix2/ -> domain.com:/home/user/sites/pix2/
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ lsyncd\[[0-9]+\]: [\:[:digit:]]+ Normal: recursive startup rsync: [\/[:alnum:]]+ -> [.\:\/[:alnum:]]+$
+
+# May 27 13:02:29 debian lsyncd[31871]: 13:02:29 Normal: Startup of "/var/www/adm/pix2/" finished: 0
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ lsyncd\[[0-9]+\]: [\:[:digit:]]+ Normal: Startup of "[\/[:alnum:]]+" finished: 0$
