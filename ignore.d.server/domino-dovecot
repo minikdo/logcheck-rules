@@ -1,10 +1,11 @@
 # ; -*- mode: conf; fill-column: 99999 -*-
 
 
-
 # Jan  1 00:00:00 debian dovecot: imap(john.doe@do-main.com)<19460><TbJq8ganHJofusUW>: Connection closed (UID fetch finished 0.495 secs ago - running for 0.023 + waiting for 4.854 secs, 33 B in + 1596677 B out) in=19688 out=27174696 deleted=0 expunged=0 trashed=0 hdr_count=631 hdr_bytes=276866 body_count=616 body_bytes=26682967
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([.@[:alnum:]-]+\)<[0-9]+><[\/+[:alnum:]]+>: Connection closed \(UID fetch finished [.0-9]+ secs ago - running for [.0-9]+ \+ waiting for [.0-9]+ secs, [.0-9]+ B in \+ [.0-9]+ B out\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
 
+# Jan  1 00:00:00 debian dovecot: imap(john.doe@do-main.com)<19714><icH2bEWnLKUgAQRwAHEGxLgjG9gKQycb>: Connection closed: read(size=8113) failed: Connection reset by peer (UID FETCH running for 0.028 + waiting input/output for 0.020 secs, 19 B in + 204872+2080 B out, state=wait-output) in=79 out=206478 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([.@[:alnum:]-]+\)<[0-9]+><[\/+[:alnum:]]+>: Connection closed: read\(size=8113\) failed: Connection reset by peer \(UID FETCH running for [.0-9]+ \+ waiting input\/output for [.0-9]+ secs, [.0-9]+ B in \+ [+.0-9]+ B out, state=wait-output\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
 
 # Jan  1 00:00:00 debian dovecot: imap(john.doe@do-main.com)<3626><BhRJ1yan9uVTHSf8>: Server shutting down. in=329 out=3420 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([-[:alnum:]@\.]+\)<[[:alnum:]]+>(<[\/+[:alnum:]]+>)?: Server shutting down. in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
@@ -37,7 +38,7 @@
 # Jan  1 00:00:00 debian dovecot: imap(user@domain.com)<13658><NnDnez2clJRPvAGh>: Connection closed (UID fetch finished 0.145 secs ago) in=9581 out=9495290 deleted=0 expunged=0 trashed=0 hdr_count=4 hdr_bytes=1467 body_count=144 body_bytes=9365757
 # Apr 21 22:22:01 debian dovecot: imap(user@domain.com)<37293><E9uAwNKj3tZTHSoc>: Connection closed (No commands sent) in=0 out=374 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
 # Jan  1 00:00:00 debian dovecot: imap(john.doe@do-main.com)<20592><yKE/HZyle828kvNq>: Connection closed (FETCH finished 126.461 secs ago) in=688 out=7307 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([.@[:alnum:]]+\)<[0-9]+><[\/+[:alnum:]]+>: Connection closed \(((ID|SELECT|FETCH|noop|IDLE|UID (SEARCH|fetch)) finished [.0-9]+ secs ago|No commands sent)\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([.@[:alnum:]-]+\)<[0-9]+><[\/+[:alnum:]]+>: Connection closed \(((ID|SELECT|FETCH|noop|IDLE|UID (SEARCH|fetch)) finished [.0-9]+ secs ago|No commands sent)\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
 
 # May  3 09:23:30 debian dovecot: imap(abc@domain.com)<11038><cRsjBbmkyLYfusUW>: Connection closed (IDLE running for 0.014 + waiting input for 558.906 secs, 0.001 in locks, 2 B in + 10 B out, state=wait-input) in=199 out=1429 deleted=0 expunged=0 trashed=0 hdr_count=0 hdr_bytes=0 body_count=0 body_bytes=0
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap\([.@[:alnum:]]+\)<[0-9]+><[\/+[:alnum:]]+>: Connection closed \(IDLE running for [0-9.]+ \+ waiting input for [0-9.]+ secs, [0-9.]+ in locks, [0-9.]+ B in \+ [0-9.]+ B out, state=wait-input\) in=[0-9-]+ out=[0-9]+ deleted=[0-9]+ expunged=[0-9]+ trashed=[0-9]+ hdr_count=[0-9]+ hdr_bytes=[0-9]+ body_count=[0-9]+ body_bytes=[0-9]+$
@@ -62,3 +63,6 @@
 
 # Jan  1 00:00:00 debian dovecot: imap-login: Login: user=<john.doe@do-main.com>, method=PLAIN, rip=1.2.3.4, lip=1.2.3.4, mpid=25205, TLS: Connection closed, session=<8/MvZBWnqdXCKQ3I>
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ dovecot: imap-login: Login: user=<[[:alnum:]@_.-]*>, method=PLAIN, rip=[.:[:alnum:]]+, lip=[.:[:alnum:]]+, mpid=[0-9]+, TLS: Connection closed, session=<[+\/[:alnum:]]+>$
+
+# Jun  5 11:22:59 vps417842 dovecot: lmtp(john.doe@do-main.com)<29931><pMsQHfMO2l7rdAAAFhaupQ>: sieve: msgid=<PATT3L844_20175508_anaVh5fIpUR8r2wofcY/ew==john.doe@do-main.com>: stored mail into mailbox 'INBOX'
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (dovecot: )?(lmtp|lda)\([-_.,@[:alnum:] ]+\)<[[:alnum:]]+>(<[\/+[:alnum:]:]+>)?: (Error: )?([-+_\/.,@:[:alnum:] ]+: )?(sieve: )?(msgid=(\? )?(<?[[:punct:][:alnum:] ]+>?(\ )?|unspecified): )?( \(((added by )?[^[:space:]]+|sfid-[_[:xdigit:]]+)\)?)?(saved mail to INBOX|stored mail into mailbox '[^']+'|marked message to be discarded if not explicitly delivered \(discard action\)|(forwarded to|sent vacation response to|discarding vacation response for message implicitly delivered to|not sending vacation response to system address|discarding vacation response to mailinglist recipient|discarded vacation reply to|discarding vacation response to (auto-submitted|precedence=(bulk|Bulk|list)) message from|discarded duplicate (vacation response|forward) to) <[^[:space:]]*>|failed to open script [\/[:alnum:].]+ \(view user logfile [\/[:alnum:].]+ for more information\))$
