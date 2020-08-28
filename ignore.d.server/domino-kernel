@@ -21,3 +21,6 @@ Jun 17 18:47:23 router kernel: [6425157.863842] ip6_tables: (C) 2000-2006 Netfil
 # Jan  1 00:00:00 debian kernel: [5674141.471188] device br0 left promiscuous mode
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel: \[[ .[:digit:]]+\] device [[:alnum:]]+ (entered|left) promiscuous mode$
+
+# Aug 19 07:48:03 debian kernel: [155896.114715] conntrack: generic helper won't handle protocol 47. Please consider loading the specific helper module.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel: \[[ .[:digit:]]+\] conntrack: generic helper won't handle protocol [0-9]+. Please consider loading the specific helper module.$

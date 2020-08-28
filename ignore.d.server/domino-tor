@@ -10,7 +10,9 @@
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Our directory information is no longer up-to-date enough to build circuits: We're missing descriptors for [\/[:digit:]]+ of our primary entry guards \(total microdescriptors: [\/[:digit:]]+\).( That's ok. We will try to fetch missing descriptors soon.)?$
 
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]:  Your Guard grocock ([\$[:alnum:]]+) is failing a very large amount of circuits. Most likely this means the Tor network is overloaded, but it could also mean an attack against you or potentially the guard itself. Success counts are [/[:digit:]]+. Use counts are [/[:digit:]]+. [[:digit:]]+ circuits completed, [[:digit:]]+ were unusable, [[:digit:]]+ collapsed, and [[:digit:]]+ timed out. For reference, your timeout cutoff is [[:digit:]]+ seconds.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: (Your )?Guard [[:alnum:]]+ \([\$[:alnum:]]+\) is failing a very large amount of circuits. Most likely this means the Tor network is overloaded, but it could also mean an attack against you or potentially the guard itself\. Success counts are [0-9]+\/[0-9]+\. Use counts are [0-9]+\/[0-9]+. [[:digit:]]+ circuits completed, [[:digit:]]+ were unusable, [[:digit:]]+ collapsed, and [[:digit:]]+ timed out. For reference, your timeout cutoff is [[:digit:]]+ seconds.$
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: (Your )?Guard [[:alnum:]]+ \([\$[:alnum:]]+\) is failing an extremely large amount of circuits. This could indicate a route manipulation attack, extreme network overload, or a bug. Success counts are [0-9]+\/[0-9]+. Use counts are [0-9]+\/[0-9]+. [0-9]+ circuits completed, [0-9]+ were unusable, [0-9]+ collapsed, and [0-9]+ timed out. For reference, your timeout cutoff is [0-9]+ seconds.$
 
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Average packaged cell fullness: [.[:digit:]]+\%. TLS write overhead: [.[:digit:]]+\%$
 
@@ -30,3 +32,6 @@
 
 # Jun  2 11:59:22 dell-r710 Tor[2585]: Failed to find node for hop #1 of our path. Discarding this circuit.
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Failed to find node for hop #[0-9]+ of our path\. Discarding this circuit\.$
+
+# Aug 27 00:07:54 debian Tor[1986412]: Received http status code 404 ("Not found") from server '1.2.3.4:443' while fetching consensus directory.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Received http status code 404 \("Not found"\) from server '[[:digit:].:]+' while fetching consensus directory.$
