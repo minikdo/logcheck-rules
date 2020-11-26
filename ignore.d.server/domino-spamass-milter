@@ -1,0 +1,4 @@
+# ; -*- mode: conf; fill-column: 99999 -*-
+
+# Aug 20 15:49:12 debian spamass-milter[887]: Could not extract score from <>
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamass-milter\[[[:digit:]]+\]: Could not extract score from <>$

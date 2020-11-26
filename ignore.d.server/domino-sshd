@@ -1,5 +1,6 @@
 # ; -*- mode: text; fill-column: 99999 -*-
 
-# Sep 21 19:15:41 router sshd[1743]: Connection closed by authenticating user root 1.2.3.4 port 51354 [preauth]
+# Sep 21 19:15:41 debian sshd[1743]: Connection closed by authenticating user root 1.2.3.4 port 51354 [preauth]
+# Oct  4 17:29:59 debian sshd[6511]: Connection closed by authenticating user www-data 10.4.0.1 port 45568 [preauth]
 
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Connection closed by authenticating user [[:alnum:]]+ [.[:digit:]]+ port [0-9]+ \[preauth\]$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ sshd\[[[:digit:]]+\]: Connection closed by authenticating user [-[:alnum:]]+ [.[:digit:]]+ port [0-9]+ \[preauth\]$

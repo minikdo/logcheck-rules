@@ -26,7 +26,6 @@
 # Nov  7 00:01:05 debian Tor[14367]: Received reload signal (hup). Reloading config and resetting internal state.
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Received reload signal \(hup\)\. Reloading config and resetting internal state\.$
 
-
 # Jan 01 00:00:00 debian Tor[14367]: Requested exit point '$39C1B28407EAC759801AFCB7106D5DC05B42A8C9' is not known. Closing.
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Requested exit point \'[[:alnum:]$]+\' is not known. Closing.$
 
@@ -35,3 +34,9 @@
 
 # Aug 27 00:07:54 debian Tor[1986412]: Received http status code 404 ("Not found") from server '1.2.3.4:443' while fetching consensus directory.
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Received http status code 404 \("Not found"\) from server '[[:digit:].:]+' while fetching consensus directory.$
+
+# Sep  1 13:09:14 debian Tor[809]: No circuits are opened. Relaxed timeout for circuit 4552 (a Measuring circuit timeout 3-hop circuit in state doing handshakes with channel state open) to 60000ms. However, it appears the circuit has timed out anyway. [11 similar message(s) suppressed in last 3600 seconds]
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: No circuits are opened\. Relaxed timeout for circuit [0-9]+ \(a Measuring circuit timeout [0-9]+-hop circuit in state doing handshakes with channel state open\) to [0-9]+ms\. However, it appears the circuit has timed out anyway\. \[[0-9]+ similar message\(s\) suppressed in last 3600 seconds\]$
+
+# Oct  5 06:19:34 debian Tor[1986412]: Received http status code 404 ("Consensus is too old") from server '1.2.3.4:443' while fetching consensus directory.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Received http status code [0-9]+ \("Consensus is too old"\) from server '[.[:digit:]:]+' while fetching consensus directory.$
