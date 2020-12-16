@@ -19,3 +19,7 @@
 # Jan 01 00:00:00 debian ntpd[32535]: new interface(s) found: waking up resolver
 
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ntpd\[[0-9]+\]: new interface\(s\) found: waking up resolver$
+
+# Jan 01 01:01:01 debian ntpd[843]: leapsecond file ('/usr/share/zoneinfo/leap-seconds.list'): will expire in less than 24 days
+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ ntpd\[[0-9]+\]: leapsecond file \('\/usr\/share\/zoneinfo\/leap-seconds.list'\): will expire in less than [0-9]+ days$

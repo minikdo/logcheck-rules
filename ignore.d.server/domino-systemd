@@ -8,6 +8,7 @@
 
 # Jan  1 00:00:00 debian systemd[1]: Finished Cleanup of Temporary Directories.
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: Finished Cleanup of Temporary Directories\.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: Finished Gets the latest METAR message\.$
 
 # Jan  1 00:00:00 debian systemd[1]: Finished Daily apt download activities.
 # Jan  1 00:00:00 debian systemd[1]: Finished Daily apt upgrade and clean activities.
@@ -63,7 +64,7 @@
 
 # Sep 20 08:03:29 router systemd[658]: Listening on D-Bus User Message Bus Socket.
 # Sep 20 08:06:33 router systemd[658]: Closed D-Bus User Message Bus Socket.
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: (Listening on|Closed) D-Bus User Message Bus Socket.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: (Listening on|Closed) D-Bus User Message Bus Socket.$
 
 # Jan  1 00:00:00 debian systemd[13129]: Finished Exit the Session.
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: Finished Exit the Session\.$
@@ -76,3 +77,6 @@
 
 # Jan  1 00:00:00 debian systemd[1]: Finished User Runtime Directory /run/user/1000.
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: Finished User Runtime Directory \/run\/user\/[0-9]+\.$
+
+# Dec  4 19:11:12 debian systemd[19869]: Queued start job for default target Main User Target.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: Queued start job for default target Main User Target.$

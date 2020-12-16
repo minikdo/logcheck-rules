@@ -26,4 +26,4 @@ Jun 17 18:47:23 router kernel: [6425157.863842] ip6_tables: (C) 2000-2006 Netfil
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel: \[[ .[:digit:]]+\] conntrack: generic helper won't handle protocol [0-9]+. Please consider loading the specific helper module.$
 
 # Nov 26 16:13:34 debian kernel: [14885.004498] Rekeying PTK for STA 00:0f:02:02:98:98 but driver can't safely do that.
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel: \[[.[:digit:]]+\] Rekeying PTK for STA [[:xdigit:]:]+ but driver can\'t safely do that\.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel: \[[.[:digit:]]+\] Rekeying PTK for STA [[:xdigit:]:]+ but driver can't safely do that\.$
