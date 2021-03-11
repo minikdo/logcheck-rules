@@ -80,3 +80,17 @@
 
 # Dec  4 19:11:12 debian systemd[19869]: Queued start job for default target Main User Target.
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: Queued start job for default target Main User Target.$
+
+# Jan 23 07:35:48 debian systemd[1]: session-c18.scope: Consumed 1.201s CPU time.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: [[:alnum:]-]+.(service|scope|slice): Consumed [[:digit:].]+s CPU time.$
+
+# Jan 23 07:35:47 debian systemd[563453]: Created slice User Application Slice.
+# Jan 23 07:35:58 debian systemd[563453]: Removed slice User Application Slice.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: (Created|Removed) slice User Application Slice.$
+
+# Jan 24 20:23:37 debian systemd[1068423]: Created slice app-lsyncd.slice.
+# Jan 24 20:23:49 debian systemd[1068423]: Removed slice app-lsyncd.slice.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: (Created|Removed) slice [[:alnum:].-]+.$
+
+# Jan 25 00:00:01 debian systemd[1]: rsyslog.service: Sent signal SIGHUP to main process 572 (rsyslogd) on client request.
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]]+\]: rsyslog.service: Sent signal SIGHUP to main process [0-9]+ \(rsyslogd\) on client request.$

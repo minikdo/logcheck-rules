@@ -1,0 +1,4 @@
+# ; -*- mode: conf; fill-column: 99999 -*-
+
+# Dec 26 13:14:11 debian syncthing[1362758]: [IF6O5] INFO:
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ syncthing\[[[:digit:]]+\]: \[[[:alnum:]]+\] INFO:
