@@ -46,3 +46,7 @@
 # Jan  1 00:00:00 debian hostapd[687]: wls4: AP-STA-POLL-OK 3c:71:bf:2d:10:52
 
 ^\w{3} [ :0-9]{11} [._[:alnum:]-]+ hostapd(\[[0-9]+\])?: [[:alnum:]]+: AP-STA-POLL-OK [[:xdigit:]:]{17}$
+
+# Apr 22 09:31:54 debian hostapd[1555]: wlp13s0: STA-OPMODE-SMPS-MODE-CHANGED 50:2f:9b:04:0a:b5 off
+
+^\w{3} [ :0-9]{11} [._[:alnum:]-]+ hostapd(\[[0-9]+\])?: [[:alnum:]]+: STA-OPMODE-SMPS-MODE-CHANGED [[:xdigit:]:]{17} off$
