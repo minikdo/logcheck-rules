@@ -1,0 +1,10 @@
+# ; -*- mode: conf; fill-column: 99999 -*-
+
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ python3\[[[:digit:]:]+\]: Export: (otodom|gratka)$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ python3\[[[:digit:]:]+\]: Photos: (True|False)$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ python3\[[[:digit:]:]+\]: Exporting [0-9]+ objects.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ python3\[[[:digit:]:]+\]: Connect to ftps...$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ python3\[[[:digit:]:]+\]: [dwrx-]+\s*[0-9]+ [[:alnum:]@.]+ [[:alnum:]@.-]+\s*[0-9]+ [[:alnum:]]+\s*[0-9]+ [[:digit:]:]+ .*$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ python3\[[[:digit:]:]+\]: Export done.$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ systemd\[[[:digit:]:]+\]: estatesexport@(otodom|gratka).service: Consumed [0-9.]+s CPU time.$

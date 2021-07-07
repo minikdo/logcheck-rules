@@ -1,0 +1,4 @@
+# ; -*- mode: conf; fill-column: 99999 -*-
+
+# Jul  7 17:28:11 debian unbound: [2051328:0] info: generate keytag query _ta-4f66. NULL IN
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ unbound: \[[[:digit:]:]+\] info: generate keytag query [[:alnum:]_.-]+ NULL IN$

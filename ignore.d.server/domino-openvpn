@@ -1,0 +1,17 @@
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (openvpn|ovpn-[._[:alnum:]-]+)\[[[:digit:]]+\]: [[:alnum:].\/:]+ peer info: .*$
+
+# Jun 22 15:05:02 debian ovpn-server[701778]: hostname1/1.2.3.4:12345 Outgoing Data Channel: Cipher 'AES-256-GCM' initialized with 256 bit key
+# Jun 22 15:05:02 debian ovpn-server[701778]: hostname1/1.2.3.4:12345 Incoming Data Channel: Cipher 'AES-256-GCM' initialized with 256 bit key
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (openvpn|ovpn-[._[:alnum:]-]+)\[[[:digit:]]+\]: [[:alnum:].\/:]+ (Incoming|Outgoing) Data Channel: Cipher '[[:alnum:]-]+' initialized with [0-9]+ bit key$
+
+# Jun 22 15:06:13 debian ovpn-server[701778]: hostname/1.2.3.4:12345 VERIFY OK: depth=0, C=US, ST=CA, L=SanFrancisco, O=Fort-Funston, CN=linode, name=EasyRSA, emailAddress=me@myhost.mydomain
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (openvpn|ovpn-[._[:alnum:]-]+)\[[[:digit:]]+\]: [[:alnum:].\/:]+ VERIFY OK: .*$
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (openvpn|ovpn-[._[:alnum:]-]+)\[[[:digit:]]+\]: [[:alnum:].\/:]+ TLS: soft reset sec=[0-9-]+ bytes=[[:digit:]\/-]+ pkts=[[:digit:]\/-]+$
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (openvpn|ovpn-[._[:alnum:]-]+)\[[[:digit:]]+\]: [[:alnum:].\/:]+ Control Channel: TLSv[0-9.]+, cipher TLSv[0-9.]+ [[:alnum:]_]+, [0-9]+ bit [[:alnum:]]+$
+
+# Jun 23 07:34:08 debian ovpn-server[701778]: 192.168.0.6:1194 TLS: Initial packet from [AF_INET]192.168.0.6:1194, sid=c793723e cc9e1b35
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ (openvpn|ovpn-[._[:alnum:]-]+)\[[[:digit:]]+\]: [[:alnum:].\/:]+ TLS: Initial packet from \[AF_INET\][[:digit:].:]+, sid=[[:xdigit:]]+ [[:xdigit:]]+$
+
+
