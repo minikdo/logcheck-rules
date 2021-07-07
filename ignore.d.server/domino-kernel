@@ -27,3 +27,6 @@ Jun 17 18:47:23 router kernel: [6425157.863842] ip6_tables: (C) 2000-2006 Netfil
 
 # Nov 26 16:13:34 debian kernel: [14885.004498] Rekeying PTK for STA 00:0f:02:02:98:98 but driver can't safely do that.
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel: \[[.[:digit:]]+\] Rekeying PTK for STA [[:xdigit:]:]+ but driver can't safely do that\.$
+
+# May 17 07:26:40 debian kernel: [8672235.902147] ath10k_pci 0000:0d:00.0: Invalid peer id 217 peer stats buffer
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ kernel: \[[.[:digit:]]+\] ath10k_pci [[:alnum:]:.]+ Invalid peer id [0-9]+ peer stats buffer$

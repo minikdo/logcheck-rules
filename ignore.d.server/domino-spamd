@@ -4,7 +4,7 @@
 
 # Jan  1 00:00:00 debian spamd[807]: dns: no callback for id 24621/IN/TXT/_adsp._domainkey.slsware.net, ignored, packet on next debug line
 # Jan  1 00:00:00 debian spamd[807]: dns: no callback for id 15235/IN/MX/slsware.net, ignored, packet on next debug line
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd\[[0-9]+\]: dns: no callback for id [[:alnum:]\._\/]+, ignored, packet on next debug line$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd\[[0-9]+\]: dns: no callback for id [[:alnum:]\._\/-]+, ignored, packet on next debug line$
 
 # Jan  1 00:00:00 debian spamd[807]: dns: no likely matching queries for id 15235
 # Jan  1 00:00:00 debian spamd[807]: dns: no likely matching queries for id 24621
@@ -34,8 +34,12 @@
 # Jan  1 00:00:00 debian spamd[6670]: spamd: server started on IO::Socket::IP [::1]:783, IO::Socket::IP [127.0.0.1]:783 (running version 3.4.2)
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd\[[0-9]+\]: spamd: server started on IO::Socket::IP \[::1\]:783, IO::Socket::IP \[[0-9.]+\]:783 \(running version [0-9.]+\)$
 
+# May  7 06:35:43 debian spamd: spamd: restarting using '/usr/sbin/spamd -d --pidfile=/var/run/spamd.pid --create-prefs --max-children 5 --helper-home-dir -u debian-spamd -x --virtual-config-dir=/home/vmail/%d/.spamassassin/%l --allow-tell'
 # Jan  1 06:55:16 debian spamd: spamd: restarting using '/usr/sbin/spamd -d --pidfile=/run/spamd.pid --create-prefs --max-children 5 --helper-home-dir -u debian-spamd -x --virtual-config-dir=/home/vmail/%d/.spamassassin/%l --allow-tell'
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd: spamd: restarting using '\/usr\/sbin\/spamd -d --pidfile=\/run\/spamd\.pid --create-prefs --max-children [0-9]+ --helper-home-dir -u debian-spamd -x --virtual-config-dir=\/home\/vmail\/\%d\/.spamassassin\/\%l --allow-tell'$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd: spamd: restarting using '\/usr\/sbin\/spamd -d --pidfile=(\/var)?\/run\/spamd\.pid --create-prefs --max-children [0-9]+ --helper-home-dir -u debian-spamd -x --virtual-config-dir=\/home\/vmail\/\%d\/.spamassassin\/\%l --allow-tell'$
 
 # Aug 22 06:55:05 debian spamd[251886]: spamd: server pid: 251886
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd\[[[:digit:]]+\]: spamd: server pid: [0-9]+$
+
+# May 28 11:25:25 linode2 spamd[28526]: spamd: using default config for spamass-milter: /home/vmail//.spamassassin//user_prefs
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ spamd\[[[:digit:]]+\]: spamd: using default config for spamass-milter: \/home\/vmail\/\/.spamassassin\/\/user_prefs$

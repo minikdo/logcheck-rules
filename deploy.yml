@@ -1,4 +1,4 @@
-- hosts: servers,!nanode,!m81
+- hosts: servers,!nanode,!m81,!edyta.org.pl
 
   remote_user: root
 

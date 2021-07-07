@@ -42,4 +42,7 @@
 ^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Received http status code [0-9]+ \("Consensus is too old"\) from server '[.[:digit:]:]+' while fetching consensus directory.$
 
 # Apr 25 14:32:41 debian Tor[28899]: http status 400 ("Nonauthoritative directory does not accept posted server descriptors") response from dirserver '185.100.87.41:443'. Malformed rendezvous descriptor?
-^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: http status 400 \("Nonauthoritative directory does not accept posted server descriptors"\) response from dirserver \'[:.0-9]+\'. Malformed rendezvous descriptor\?$
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: http status 400 \("Nonauthoritative directory does not accept posted server descriptors"\) response from dirserver '[[:digit:].:]+'. Malformed rendezvous descriptor\?$
+
+^\w{3} [ :[:digit:]]{11} [._[:alnum:]-]+ Tor\[[[:digit:]]+\]: Our onion service received [0-9]+ v2 and [0-9]+ v3 [[:alnum:]]+ cells and attempted to launch [0-9]+ rendezvous circuits.$
+
